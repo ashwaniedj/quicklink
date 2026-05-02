@@ -1,1 +1,1 @@
-# quicklink
+product_design.md is used to create initial project code for this effort.
