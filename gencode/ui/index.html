@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quicklink</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">Quicklink</div>
+      <nav class="app-nav" aria-label="Main navigation">
+        <button class="nav-button" data-target="home">Home</button>
+        <button class="nav-button" data-target="console">Console</button>
+        <button class="nav-button" data-target="help">Help</button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="home" class="page active" aria-labelledby="home-title">
+        <div class="page-header">
+          <h1 id="home-title">Create a Quicklink</h1>
+          <p>Use a short code to redirect users to a target URL.</p>
+        </div>
+
+        <form id="quicklink-form" class="card form-card">
+          <div class="form-grid">
+            <label for="quicklink-name">Quicklink name</label>
+            <input id="quicklink-name" name="quicklink" type="text" placeholder="e.g. google" required />
+
+            <label for="target-url">Target URL</label>
+            <input id="target-url" name="targetUrl" type="url" placeholder="https://www.example.com" required />
+
+            <label for="tags">Tags</label>
+            <input id="tags" name="tags" type="text" placeholder="search, seo, useful" />
+          </div>
+
+          <button type="submit" class="primary-button">Create Quicklink</button>
+          <div id="home-message" class="message" aria-live="polite"></div>
+        </form>
+
+        <div class="card overview-card">
+          <h2>Active Quicklinks</h2>
+          <div id="quicklinks-list" class="quicklinks-list">Loading quicklinks...</div>
+        </div>
+      </section>
+
+      <section id="console" class="page" aria-labelledby="console-title">
+        <div class="page-header">
+          <h1 id="console-title">Console</h1>
+          <p>View audit events and manage quicklinks.</p>
+        </div>
+
+        <div class="card filter-card">
+          <div class="filter-grid">
+            <label for="filter-event-type">Event type</label>
+            <select id="filter-event-type">
+              <option value="">All</option>
+              <option value="CREATE">CREATE</option>
+              <option value="UPDATE">UPDATE</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+
+            <label for="filter-quicklink-name">Quicklink name</label>
+            <input id="filter-quicklink-name" type="text" placeholder="Filter by quicklink" />
+          </div>
+          <button id="filter-button" class="secondary-button">Apply filter</button>
+        </div>
+
+        <div class="card audit-card">
+          <h2>Audit events</h2>
+          <div id="audit-table" class="audit-table">Loading audit events...</div>
+        </div>
+
+        <div class="card manage-card">
+          <h2>Manage quicklinks</h2>
+          <div id="manage-list" class="manage-list">Loading quicklinks...</div>
+        </div>
+      </section>
+
+      <section id="help" class="page" aria-labelledby="help-title">
+        <div class="page-header">
+          <h1 id="help-title">Help & FAQ</h1>
+          <p>Answers to common questions and contact details for support.</p>
+        </div>
+
+        <div class="card faq-card">
+          <h2>FAQ</h2>
+          <dl>
+            <dt>How do I create a quicklink?</dt>
+            <dd>Enter a unique quicklink name, a target URL, and optional tags, then click Create Quicklink.</dd>
+            <dt>Can I update a quicklink?</dt>
+            <dd>Yes. Use the console to block or delete existing quicklinks.</dd>
+            <dt>How do I know if an action succeeded?</dt>
+            <dd>Check the message banner in the UI and review audit events in the console.</dd>
+          </dl>
+        </div>
+
+        <div class="card contact-card">
+          <h2>Contact</h2>
+          <p>If you need help, email <a href="mailto:test@gmail.com">test@gmail.com</a>.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
