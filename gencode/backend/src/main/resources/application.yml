@@ -1,3 +1,5 @@
+app:
+  name: quicklink
 server:
   port: 8080
 spring:
